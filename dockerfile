@@ -8,14 +8,14 @@ LABEL OS="Ubuntu/latest"
 WORKDIR /srv/
 ENV TZ=Europe/Moscow
 # Update system packages:
-RUN apt -y update > /dev/null 2>&1;
+RUN apt -y update > /dev/null 2>&1;\
 # Fix for select tzdata region
-RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone > /dev/null 2>&1;\
-    dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1;
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone > /dev/null 2>&1;\
+    dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1;\
 # Install dependencies, you would need common set of tools.
-RUN apt -y install curl wget > /dev/null 2>&1;
+    apt -y install curl wget > /dev/null 2>&1;\
 # Download release
-RUN URL="https://github.com/AdguardTeam/AdGuardHome/releases" > /dev/null 2>&1;\
+    URL="https://github.com/AdguardTeam/AdGuardHome/releases" > /dev/null 2>&1;\
     FILE="AdGuardHome_linux_armv7.tar.gz" > /dev/null 2>&1;\
     LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' $URL/latest) > /dev/null 2>&1;\
     LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/') > /dev/null 2>&1;\

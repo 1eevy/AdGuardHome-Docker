@@ -21,6 +21,32 @@ It operates as a DNS server that re-routes tracking domains to a "black hole", t
 
 ## Getting Started
 
+## Bulding
+
+**Choose docker file for cpu x64 or ARM**
+
+```shell
+git clone https://github.com/Dofamin/AdGuardHome-Docker.git /srv/AdGuardHome/
+
+docker build . --tag adguard-home
+
+docker rm -f AdGuard-Home
+
+docker create \
+  --name=AdGuard-Home\
+  -p 3002:3002/tcp \
+  -p 3002:3002/udp \
+  -p $(hostname -I | awk '{print $1}'):53:53/tcp \
+  -p $(hostname -I | awk '{print $1}'):53:53/udp \
+  -v /srv/AdGuardHome/container-image-root/data/:/srv/AdGuardHome/data/\
+  -v /srv/AdGuardHome/container-image-root/:/srv/AdGuardHome/work/\
+  --memory="100m" \
+  adguard-home:latest
+  
+docker start AdGuard-Home
+
+```
+
 ### How does AdGuard Home compare to Pi-Hole
 
 At this point, AdGuard Home has a lot in common with Pi-Hole. Both block ads and trackers using "DNS sinkholing" method, and both allow customizing what's blocked.

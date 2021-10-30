@@ -13,6 +13,7 @@ docker create \
   -p $(hostname -I | awk '{print $1}'):53:53/udp \
   -v /srv/AdGuardHome/container-image-root/data/:/srv/AdGuardHome/data/\
   -v /srv/AdGuardHome/container-image-root/:/srv/AdGuardHome/work/\
+  --restart unless-stopped \
   --memory="100m" \
   adguard-home:latest
   

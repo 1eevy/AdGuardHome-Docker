@@ -23,8 +23,6 @@ It operates as a DNS server that re-routes tracking domains to a "black hole", t
 
 ## Bulding
 
-**Choose docker file for cpu x64 or ARM**
-
 ```shell
 git clone https://github.com/Dofamin/AdGuardHome-Docker.git /srv/AdGuardHome/
 

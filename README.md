@@ -46,6 +46,29 @@ docker start AdGuard-Home
 
 ```
 
+Or just pull from GitHub
+
+```shell
+docker pull ghcr.io/dofamin/adguardhome-docker:main
+
+docker rm --force AdGuard-Home
+
+docker create \
+  --name=AdGuard-Home\
+  -p 3002:3002/tcp \
+  -p 3002:3002/udp \
+  -p $(hostname -I | awk '{print $1}'):53:53/tcp \
+  -p $(hostname -I | awk '{print $1}'):53:53/udp \
+  -v /srv/AdGuardHome/container-image-root/data/:/srv/AdGuardHome/data/\
+  -v /srv/AdGuardHome/container-image-root/:/srv/AdGuardHome/work/\
+  --restart unless-stopped \
+  --memory="100m" \
+  ghcr.io/dofamin/adguardhome-docker:main
+
+docker start AdGuard-Home
+
+```
+
 ### How does AdGuard Home compare to Pi-Hole
 
 At this point, AdGuard Home has a lot in common with Pi-Hole. Both block ads and trackers using "DNS sinkholing" method, and both allow customizing what's blocked.

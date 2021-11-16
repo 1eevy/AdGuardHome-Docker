@@ -1,4 +1,4 @@
-[![Docker Image CI](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-image.yml)
+[![Docker](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-publish.yml)
 # AdGuard Home-Docker
 AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it'll cover ALL your home devices, and you don't need any client-side software for that.
 

@@ -13,7 +13,7 @@ RUN apt -y update > /dev/null 2>&1;\
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone > /dev/null 2>&1;\
     dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1;\
 # Install dependencies, you would need common set of tools.
-RUN apt -y install curl wget ntp > /dev/null 2>&1;\
+    apt -y install curl wget ntp > /dev/null 2>&1;\
 # Download release
     URL="https://github.com/AdguardTeam/AdGuardHome/releases" > /dev/null 2>&1;\
     FILE="AdGuardHome_linux_armv7.tar.gz" > /dev/null 2>&1;\

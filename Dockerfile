@@ -27,11 +27,8 @@ RUN apt -y install curl wget ntp > /dev/null 2>&1;\
 # Cleanup
     rm -f AdGuardHome_linux_armv7.tar.gz > /dev/null 2>&1;\
     apt-get clean > /dev/null 2>&1;
-# Volume
-VOLUME [ "/srv/AdGuardHome/data" ]
-VOLUME [ "/srv/AdGuardHome/work" ]
 # HEALTHCHECK
-#HEALTHCHECK --interval=60s --timeout=30s --start-period=300s CMD node extra/healthcheck.js
+HEALTHCHECK --interval=60s --timeout=30s --start-period=15s CMD curl -f http://localhost:3002 || exit 1
 # Expose Ports:
 EXPOSE 3002
 EXPOSE 53

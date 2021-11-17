@@ -28,7 +28,7 @@ RUN apt -y update > /dev/null 2>&1;\
     rm -f AdGuardHome_linux_armv7.tar.gz > /dev/null 2>&1;\
     apt-get clean > /dev/null 2>&1;
 # HEALTHCHECK
-HEALTHCHECK --interval=60s --timeout=30s --start-period=15s CMD curl -f http://localhost:3002 || exit 1
+HEALTHCHECK --interval=60s --timeout=30s --start-period=5s CMD curl -f http://localhost:3002 || exit 1
 # Expose Ports:
 EXPOSE 3002
 EXPOSE 53

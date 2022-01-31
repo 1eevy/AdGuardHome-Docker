@@ -22,10 +22,10 @@ RUN apt -y update > /dev/null 2>&1;\
     ARTIFACT_URL="$URL/download/$LATEST_VERSION/$FILE" > /dev/null 2>&1;\
     wget $ARTIFACT_URL | bash - > /dev/null 2>&1;\
 # Unpack release
-    tar -xvzf AdGuardHome_linux_armv7.tar.gz > /dev/null 2>&1;\
+    tar -xvzf $FILE > /dev/null 2>&1;\
     mkdir /srv/AdGuardHome/work > /dev/null 2>&1;\
 # Cleanup
-    rm -f AdGuardHome_linux_armv7.tar.gz > /dev/null 2>&1;\
+    rm -f $FILE > /dev/null 2>&1;\
     apt-get clean > /dev/null 2>&1;
 # HEALTHCHECK
 HEALTHCHECK --interval=60s --timeout=30s --start-period=5s CMD curl -f http://localhost:3002 || exit 1

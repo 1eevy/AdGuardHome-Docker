@@ -33,4 +33,4 @@ HEALTHCHECK --interval=60s --timeout=30s --start-period=5s CMD curl -f http://lo
 EXPOSE 3002
 EXPOSE 53
 # CMD
-CMD ["/bin/bash" , "-c" , "service ntp start && ./AdGuardHome/AdGuardHome --port 3002 --work-dir AdGuardHome/work"]
+CMD ["/bin/bash" , "-c" , "service ntp start && /srv/AdGuardHome/AdGuardHome --port 3002 --work-dir AdGuardHome/work"]

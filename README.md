@@ -36,8 +36,8 @@ docker create \
   -p 3002:3002/udp \
   -p $(hostname -I | awk '{print $1}'):53:53/tcp \
   -p $(hostname -I | awk '{print $1}'):53:53/udp \
-  -v /srv/AdGuardHome/container-image-root/data/:/srv/AdGuardHome/data/\
-  -v /srv/AdGuardHome/container-image-root/:/srv/AdGuardHome/work/\
+  -v /srv/AdGuardHome/data/:/srv/AdGuardHome/data/\
+  -v /srv/AdGuardHome/:/srv/AdGuardHome/work/\
   --restart unless-stopped \
   --memory="100m" \
   adguard-home:latest
@@ -59,8 +59,8 @@ docker create \
   -p 3002:3002/udp \
   -p $(hostname -I | awk '{print $1}'):53:53/tcp \
   -p $(hostname -I | awk '{print $1}'):53:53/udp \
-  -v /srv/AdGuardHome/container-image-root/data/:/srv/AdGuardHome/data/\
-  -v /srv/AdGuardHome/container-image-root/:/srv/AdGuardHome/work/\
+  -v /srv/AdGuardHome/data/:/srv/AdGuardHome/data/\
+  -v /srv/AdGuardHome/:/srv/AdGuardHome/work/\
   --restart unless-stopped \
   --memory="100m" \
   ghcr.io/dofamin/adguardhome-docker:main

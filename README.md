@@ -1,23 +1,18 @@
 [![Docker](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Dofamin/AdGuardHome-Docker/actions/workflows/docker-publish.yml)
+
 # AdGuard Home-Docker
+
 AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it'll cover ALL your home devices, and you don't need any client-side software for that.
 
 It operates as a DNS server that re-routes tracking domains to a "black hole", thus preventing your devices from connecting to those servers. It's based on software we use for our public [AdGuard DNS](https://adguard.com/en/adguard-dns/overview.html) servers -- both share a lot of common code.
- 
-* [Getting Started](#getting-started)
-* [Comparing AdGuard Home to other solutions](#comparison)
-    * [How is this different from public AdGuard DNS servers?](#comparison-adguard-dns)
-    * [How does AdGuard Home compare to Pi-Hole](#comparison-pi-hole)
-    * [How does AdGuard Home compare to traditional ad blockers](#comparison-adblock)
-* [How to build from source](#how-to-build)
-* [Contributing](#contributing)
-    * [Test unstable versions](#test-unstable-versions)
-    * [Reporting issues](#reporting-issues)
-    * [Help with translations](#translate)
-    * [Other](#help-other)
-* [Projects that use AdGuard Home](#uses)
-* [Acknowledgments](#acknowledgments)
-* [Privacy](#privacy)
+
+- [AdGuard Home-Docker](#adguard-home-docker)
+  - [Getting Started](#getting-started)
+  - [Bulding](#bulding)
+    - [How does AdGuard Home compare to Pi-Hole](#how-does-adguard-home-compare-to-pi-hole)
+    - [How does AdGuard Home compare to traditional ad blockers](#how-does-adguard-home-compare-to-traditional-ad-blockers)
+  - [Privacy](#privacy)
+        - [Official AdGuardHome GitHub Repository](#official-adguardhome-github-repository)
 
 ## Getting Started
 
